@@ -1,5 +1,6 @@
-// CountDown Timer
+"use strict";
 
+// CountDown Timer
 let countDownDate = new Date("Dec 31, 2022 23:59:59").getTime();
 
 let counter = setInterval(() => {
@@ -30,13 +31,13 @@ let counter = setInterval(() => {
 let skill = document.getElementById("skills");
 let skillSpans = document.querySelectorAll(".the-progress span");
 
-window.onscroll = function () {
-  if (window.scrollY >= skill.offsetTop) {
-    skillSpans.forEach((skill) => {
-      skill.style.width = skill.dataset.width;
+window.addEventListener("scroll", (el) => {
+  if (window.scrollY > skill.offsetTop) {
+    skillSpans.forEach((span) => {
+      span.style.width = span.dataset.width;
     });
   }
-};
+});
 
 // Stats Section
 const stats = document.querySelector(".stats");
